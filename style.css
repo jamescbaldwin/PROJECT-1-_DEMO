@@ -1,7 +1,4 @@
-/* body {
-    font-family: "Lato", sans-serif;
-  } */
-  body,
+body,
 html {
   height: 100%;
   margin: 0;
@@ -85,6 +82,7 @@ button{
     }
 }
   .sidebar {
+    text-align: center;
     height: 100%;
     width: 85px;
     position: fixed;
@@ -100,17 +98,18 @@ button{
   }
   
   .sidebar a {
-    padding: 8px 8px 8px 32px;
+    /* padding: 8px 8px 8px 32px; */
     text-decoration: none;
     font-size: 25px;
     color: #818181;
     display: block;
   }
   
-  .sidebar a:hover {
+  /* .sidebar a:hover {
     color: #f1f1f1;
     width: 200px;
-  }
+    opacity: 1;
+  } */
   
   main .sidebar {
     position: absolute;

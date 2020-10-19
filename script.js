@@ -19,7 +19,7 @@ function query3(country) {
        src: response3[0].flag,
        title: 'Country Flag',
        alt: 'Country Flag',
-       width: 500, 
+       width: 420, 
        height: 200
      });  
      var queryURL2 = "https://api.sunrise-sunset.org/json?lat=" + lat + "&lng=" + lon;
@@ -36,7 +36,9 @@ function query3(country) {
      });
      });
  };
-var countryArray = [
+
+///keeo all code above
+  var countryArray = [
     "Afghanistan", 
     "Åland Islands",
     "Albania",
@@ -275,43 +277,52 @@ var countryArray = [
     "Uganda",
     "Ukraine",
     "United Arab Emirates",
-    "United Kingdom of Great Britain and Northern Ireland",
+    "United Kingdom of Great Britain and Northern Ireland", //abbr
     "United States of America",
     "Uruguay",
     "Uzbekistan",
     "Vanuatu",
     "Vatican City",
-    "Venezuela (Bolivarian Republic of)",
+    "Venezuela (Bolivarian Republic of)", //abbr
     "Viet Nam",
     "Wallis and Futuna",
     "Western Sahara",
     "Yemen",
     "Zambia",
     "Zimbabwe"
-]
+  ]
 
-for (let i = 0; i < countryArray.length; i++) {
-  const element = countryArray[i];
-  console.log(countryArray[i]);
-  $("#mySidebar").append('<ul></ul>');
-}
+  function makeList() {
+    for (let i = 0; i < countryArray.length; i++) {
+      $('#mySidebar').append(`<li> <button class='s'>  ${countryArray[i]}  </button> </li>`) 
+    }   
+    // figure out how to make everything a button as well
+  }
+  $('#mySidebar').on('click', '.s' , function(){
+    var clickcountry = $(this).text().trim()
+    console.log(clickcountry)
+    query3(clickcountry);
+  })
 
-var mini = true;
+makeList();
+
+var hover = true;
 
 function toggleSidebar() {
-  if (mini) {
+  if (hover) {
     // console.log("opening sidebar");
-    document.getElementById("mySidebar").style.width = "200px";
+    document.getElementById("mySidebar").style.width = "210px";
     $("")
     // document.getElementById("main").style.marginLeft = "200px";
-    this.mini = false;
+    this.hover = false;
   } else {
     // console.log("closing sidebar");
     document.getElementById("mySidebar").style.width = "40px";
     // document.getElementById("main").style.marginLeft = "40px";
-    this.mini = true;
+    this.hover = true;
   }
 }
+
 
 
 
