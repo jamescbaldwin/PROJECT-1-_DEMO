@@ -1,4 +1,4 @@
-$(document).ready(function() { 
+// $(document).ready(function() { 
 $("#search").on('click', function(){
   var country = $("#city-input").val()
   // console.log(cityInput)
@@ -318,6 +318,7 @@ function query3(country) {
     var clickcountry = $(this).text().trim()
     console.log(clickcountry)
     query3(clickcountry);
+    $("#displayCountryName").html(clickcountry)
   })
 
 makeList();
@@ -338,6 +339,6 @@ function toggleSidebar() {
     this.hover = true;
   }
 }
-})
+// })
 
 
